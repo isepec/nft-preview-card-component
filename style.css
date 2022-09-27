@@ -1,0 +1,184 @@
+/* ===== General ===== */
+:root {
+    --clr-bg-0: hsl(217, 54%, 11%);
+    --clr-bg-1: hsl(216, 50%, 16%);
+
+    --clr-fg-0: hsl(215, 32%, 27%);
+    --clr-fg-1: hsl(215, 51%, 70%);
+    --clr-fg-max: hsl(0, 0%, 100%);
+
+    --clr-accent: hsl(178, 100%, 50%);
+    --clr-accent-transparent: hsl(178, 100%, 50%, 50%);
+
+    font-family: 'Outfit', sans-serif;
+}
+
+*, *::before {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: var(--clr-bg-0);
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+p {
+    font-weight: 300;
+    color: var(--clr-fg-1);
+}
+
+h1, a {
+    color: var(--clr-fg-max);
+    text-decoration: none;
+}
+
+::selection {
+    color: var(--clr-bg-0);
+    background: var(--clr-accent);
+}
+
+/* ===== Card (Main) ===== */
+.card {
+    background: var(--clr-bg-1);
+    box-shadow: 0 0.9375rem 3.125rem hsla(0, 0%, 0%, 15%);
+
+    max-width: 21.875rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    margin: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.card__img-container {
+    border-radius: .5rem;
+    overflow: hidden;
+
+    margin-bottom: 1.5rem;
+
+    position: relative;
+}
+
+.card__img-preview {
+    background: var(--clr-accent-transparent);
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.card__img-preview:hover {
+    opacity: 1;
+}
+
+.card__title {
+    font-size: 1.375rem;
+    margin-bottom: 0.625rem;
+
+    cursor: pointer;
+
+    transition: color .5s;
+}
+
+.card__title:hover {
+    color: var(--clr-accent);
+}
+
+.card__description {
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.card__value-and-time-left {
+    display: flex;
+
+    padding-bottom: 1rem;
+    border-bottom: solid 0.0625rem var(--clr-fg-0);
+    margin-bottom: 1rem;
+}
+
+.card__value {
+    color: var(--clr-accent);
+    font-weight: 500;
+}
+
+.card__value::before {
+    content: url(images/icon-ethereum.svg);
+    margin-right: 0.375rem;
+    vertical-align: middle;
+}
+
+.card__time-left {
+    margin-left: auto;
+}
+
+.card__time-left::before {
+    content: url(images/icon-clock.svg);
+    margin-right: 0.375rem;
+    vertical-align: middle;
+}
+
+.card__creator {
+    display: flex;
+    align-items: center;
+}
+
+.card__creator-img {
+    max-width: 2rem;
+    outline: solid 0.0625rem var(--clr-fg-max);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.card__creator-name a {
+    transition: color .5s;
+}
+
+.card__creator-name a:hover{
+    color: var(--clr-accent);
+}
+
+
+/* ===== Footer ===== */
+footer, footer a {
+    font-size: .7rem;
+    text-align: center;
+
+    width: 18em;
+    margin: 1em auto 3em;
+}
+
+footer a {
+    color: var(--clr-fg-max);
+    transition: color .5s;
+}
+
+footer a:hover {
+    color: var(--clr-accent);
+}
